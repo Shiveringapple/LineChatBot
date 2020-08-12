@@ -1,0 +1,272 @@
+{
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/077/67/0010776719.jpg&v=5a5c90bc&w=250&h=250",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "backgroundColor": "#D89393",
+          "action": {
+            "type": "uri",
+            "uri": "http://www.eslite.com/product.aspx?pgid=1001116172652361&kw=放鬆之書+找出源頭+調適情緒+釋放壓力的全方位療癒減壓手冊&pi=0"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "text",
+              "text": "放鬆之書",
+              "flex": 0,
+              "size": "xxl",
+              "align": "start",
+              "weight": "bold",
+              "color": "#000000",
+              "wrap": true
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "找出源頭、調適情緒、釋放壓力的全方位療癒減壓手冊",
+                  "flex": 0,
+                  "size": "md",
+                  "weight": "bold",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "我有興趣!!",
+                "uri": "http://www.eslite.com/product.aspx?pgid=1001116172652361&kw=放鬆之書+找出源頭+調適情緒+釋放壓力的全方位療癒減壓手冊&pi=0"
+              },
+              "color": "#D67979",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/075/03/0010750391_bc_01.jpg&v=58f4a77b&w=250&h=250",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "backgroundColor": "#D89393",
+          "action": {
+            "type": "uri",
+            "uri": "http://www.eslite.com/product.aspx?pgid=1001119732587157&kw=不被壓力綁架+駕馭壓力黃金8法則+在關鍵時刻不失常+表現出眾+&pi=0"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "text",
+              "text": "不被壓力綁架",
+              "size": "xxl",
+              "align": "start",
+              "weight": "bold",
+              "color": "#000000",
+              "wrap": true
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "flex": 1,
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "駕馭壓力黃金8法則, \n在關鍵時刻不失常, 表現出眾! ",
+                  "flex": 0,
+                  "size": "md",
+                  "weight": "bold",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "我有興趣!!",
+                "uri": "http://www.eslite.com/product.aspx?pgid=1001119732587157&kw=不被壓力綁架+駕馭壓力黃金8法則+在關鍵時刻不失常+表現出眾+&pi=0"
+              },
+              "color": "#D67979",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/083/17/0010831746.jpg&w=200",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "backgroundColor": "#D89393"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "text",
+              "text": "頂尖人士\n這樣面對壓力",
+              "size": "xl",
+              "align": "start",
+              "weight": "bold",
+              "color": "#000000",
+              "wrap": true
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "活用行為科學消除工作與人際難題",
+                  "flex": 0,
+                  "size": "md",
+                  "weight": "bold",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "我有興趣!!",
+                "uri": "http://www.eslite.com/product.aspx?pgid=1001122732787642&kw=頂尖人士這樣面對壓力+活用行為科學消除工作與人際難題&pi=0"
+              },
+              "color": "#D67979",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://im1.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/084/13/0010841334.jpg&w=200",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "backgroundColor": "#D89393"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "text",
+              "text": "你累了嗎? ",
+              "size": "xl",
+              "weight": "bold",
+              "wrap": true
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "flex": 1,
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "根除疲勞的究極健康法",
+                  "flex": 0,
+                  "size": "md",
+                  "weight": "bold",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "我有興趣!!",
+                "uri": "http://www.eslite.com/product.aspx?pgid=1001309202811303&kw=世界の最新医学が証明した+根こそぎ疲れがとれる究極の健康法&pi=0"
+              },
+              "flex": 2,
+              "color": "#D67979",
+              "style": "primary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://s3.amazonaws.com/cms.ipressroom.com/332/files/20201/Photo+by+Alfons+Morales+on+Unsplash.jpg",
+          "size": "full",
+          "aspectMode": "cover",
+          "backgroundColor": "#B25151"
+        },
+        "body": {
+          "type": "box",
+          "layout": "horizontal",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "前往誠品網路書店看更多",
+                "uri": "http://www.eslite.com/search_BW.aspx?query=壓力"
+              },
+              "color": "#C36464",
+              "height": "md",
+              "style": "primary",
+              "gravity": "center"
+            }
+          ]
+        }
+      }
+    ]
+  }
