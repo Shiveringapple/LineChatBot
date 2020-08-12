@@ -511,4 +511,6 @@ def handle_video_message(event):
 
 
 
-app.run(port=os.environ['PORT'])
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
