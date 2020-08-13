@@ -551,4 +551,4 @@ def handle_video_message(event):
 
 # 最好是將資料存到外部 每次重新執行時再讀取
 
-app.run(host='0.0.0.0', port='PORT')
+app.run(host='0.0.0.0', port=os.environ['PORT'])
