@@ -65,7 +65,7 @@ def handle_follow_event(event):
 
 
     # 歡迎詞
-    text_send_message = TextSendMessage('このDIOだ! 我是Dio，\n歡迎你來到我的"世界"!\n在繁忙的日子，壓力很大嗎?\n在這裡，你可以利用我的能力暫停時間，停下來，休息一下，\n不妨花個時間做個小測驗，\n來檢視自己的壓力程度唷~\n那麼準備好的話，跟我講個暗號"Wryyy"，我就會幫你測驗了... \n另外，輸入"壓力"的話，我也會推薦你一些能夠幫助你的書唷!')
+    text_send_message = TextSendMessage('このDIOだ! 我是Dio，\n歡迎你來到我的"世界"!\n在繁忙的日子，壓力很大嗎?\n在這裡，你可以利用我的能力暫停時間，停下來，休息一下，\n不妨花個時間做個小測驗，\n來檢視自己的壓力程度唷~\n那麼準備好的話，跟我講個暗號"Wryyy"，我就會幫你測驗了... \n另外，輸入"Book"的話，我也會推薦你一些能夠幫助你的書唷!')
     image_send_message = ImageSendMessage(
         original_content_url="https://steamuserimages-a.akamaihd.net/ugc/915795043500363825/7B320C3E3D06532C2E1CCB298928BBBEAEB6CC84/",
         preview_image_url="https://steamuserimages-a.akamaihd.net/ugc/915795043500363825/7B320C3E3D06532C2E1CCB298928BBBEAEB6CC84/"
