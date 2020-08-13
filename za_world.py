@@ -378,17 +378,16 @@ flexCarouselSendMeesage = FlexSendMessage(alt_text="壓力", contents=carouselCo
 template_message_dict = {
     "Book": flexCarouselSendMeesage}
 
+from collections import OrderedDict
 
-Answer_list = []
-dict_ID_USERS = {}
-m = int(len(Answer_list)) + 1
+x = OrderedDict()
+
 
 # 每個人的狀態記下來用{ID:Q(n)}
 # 不管輸入什麼都回應text的內容
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_profile = line_bot_api.get_profile(event.source.user_id)
-    global m
     global sum
     global dict_ID_USERS
     if event.message.text == "ZA WARUDO":
@@ -431,25 +430,30 @@ def handle_message(event):
         )
 
     elif event.message.text == "Wryyy":
-        dict_ID_USERS.update([(user_profile.user_id, len(Answer_list))])
-        print(dict_ID_USERS)
+        x[user_profile.user_id] = []
+        m = int(len(x[user_profile.user_id])) + 1
+        print(x)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=Q[m], quick_reply=quickReplyList))
     elif event.message.text == "1" or event.message.text == "0":
-        if user_profile.user_id not in dict_ID_USERS.keys():
+        if user_profile.user_id not in x.keys():
+            m = int(len(x[user_profile.user_id])) + 1
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=Q[m], quick_reply=quickReplyList))
-        elif user_profile.user_id in dict_ID_USERS.keys():
+        elif user_profile.user_id in x.keys():
+            m = int(len(x[user_profile.user_id])) + 1
             if m < 12:
                 m += 1
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=Q[m], quick_reply=quickReplyList))
-                Answer_list.append(event.message.text)
-                dict_ID_USERS.update([(user_profile.user_id, len(Answer_list))])
-                print(dict_ID_USERS)
-                print(Answer_list)
+                x[user_profile.user_id].append(event.message.text)
+                x.update([(user_profile.user_id, x[user_profile.user_id])])
+                print(x)
+                print(x[user_profile.user_id])
             elif m == 12:
-                Answer_list.append(event.message.text)
-                dict_ID_USERS.update([(user_profile.user_id, len(Answer_list))])
+                x[user_profile.user_id].append(event.message.text)
+                x.update([(user_profile.user_id, x[user_profile.user_id])])
+                print(x)
+                print(x[user_profile.user_id])
                 sum = 0
-                for t in Answer_list:
+                for t in x[user_profile.user_id]:
                     sum += int(t)
                 print(sum)
                 result = "完成了! 你的分數是 " + str(sum) + "分!!\n回答3個「是」：您的壓力指數還在能負荷的範圍。\n" \
@@ -457,11 +461,12 @@ def handle_message(event):
                                                     "回答6~8個「是」：您的壓力很大，趕快去看心理衛生專業人員，接受系統性的心理治療。\n" \
                                                     "回答9個以上「是」：您的壓力已很嚴重，應該看精神專科醫師，依醫師處方用藥物治療與心理治療，幫忙您的生活趕快恢復正常軌道。"
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result))
-                Answer_list.clear() # 為甚麼清空了再次打Wryyy還是會m=12
-                dict_ID_USERS.update([(user_profile.user_id, len(Answer_list))])
-                print(dict_ID_USERS)
-                m = len(Answer_list) + 1
+                x[user_profile.user_id].clear()
+                x.update([(user_profile.user_id, [])])
+                print(x)
 
+    elif event.message.text == "stop":
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="如果有需要隨時可以重做唷"))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
 
@@ -507,10 +512,43 @@ def handle_video_message(event):
         event.reply_token,
         TextSendMessage('哪尼! 會動的念照...霸卡哪! 替身能力竟然提升了!')
     )
+# x.update({'U4881c8cf77bfa101c70f186832037e81': 0})
+# x['U4881c8cf77bfa101c70f186832037e81'] = []
+# x['U4881c8cf77bfa101c70f186832037e82'] = []
+#
+# x['U4881c8cf77bfa101c70f186832037e81'].append("1")
+# x['U4881c8cf77bfa101c70f186832037e82'].append("0")
+# print(x)
+#
+# x['U4881c8cf77bfa101c70f186832037e81'].append("0")
+# x['U4881c8cf77bfa101c70f186832037e82'].append("1")
+# print(x)
+#
+# x['U4881c8cf77bfa101c70f186832037e81'].append("0")
+# print(x)
+# print(len(x['U4881c8cf77bfa101c70f186832037e81']))
+# print(len(x['U4881c8cf77bfa101c70f186832037e82']))
+# dict_ID_USERS.update({'U4881c8cf77bfa101c70f186832037e81': 0})
+# Answer_list.append("1")
+# dict_ID_USERS.update({'U4881c8cf77bfa101c70f186832037e81' : len(Answer_list)})
+# print(dict_ID_USERS)
+# dict_ID_USERS.update({'U4881c8cf77bfa101c70f186832037e81': 1, 'U4881c8cf77bfa101c70f186832037e82' : 0})
+# Answer_list.append("0")
+# dict_ID_USERS.update({'U4881c8cf77bfa101c70f186832037e81' : len(Answer_list), 'U4881c8cf77bfa101c70f186832037e82' : len(Answer_list)})
+# print(dict_ID_USERS)
+# print(Answer_list[""])
+# 將答案按照ID分類
+# 可以用各種方式做，但要看每個方法哪一個效率，哪一個比較合適。
+# 可用JSON格式來將Answer_list
+# 結果會是：
+# ans = {
+#     "UID1": [1, 1, 0],
+#     "UID2": [0, 0, 1]
+# }
+# 所以要將{"id" : list}的形式update到ans
+# 最後將dict_ID_USERS.update([(user_profile.user_id, ans.values])
 
 
+# 最好是將資料存到外部 每次重新執行時再讀取
 
-
-if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+app.run(host='0.0.0.0', port='PORT')
