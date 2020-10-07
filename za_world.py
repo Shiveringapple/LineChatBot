@@ -373,10 +373,7 @@ x = OrderedDict()
 
 # 每個人的狀態記下來用{ID:Q(n)}
 # 不管輸入什麼都回應text的內容
-@handler.add(MessageEvent, message=[{'type': 'sticker',
-    'packageId': "2",
-    'stickerId': "149"
-}])
+@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_profile = line_bot_api.get_profile(event.source.user_id)
     global sum
@@ -459,7 +456,9 @@ def handle_message(event):
     elif event.message.text == "stop":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="如果有需要隨時可以重做唷"))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(messeage=[{'type': 'sticker',
+    'packageId': "2",
+    'stickerId': "149"}]))
 
 # 存照片
 from linebot.models import (
