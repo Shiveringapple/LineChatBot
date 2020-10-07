@@ -355,6 +355,13 @@ flexCarouselContainerJsonDict = """{
   }
 """
 
+stickermessagejson = """{
+                          type: "sticker",
+                          packageId: "2",
+                          stickerId: "149"
+                        }
+"""
+
 from linebot.models import (
     FlexSendMessage, CarouselContainer)
 
@@ -456,10 +463,7 @@ def handle_message(event):
     elif event.message.text == "stop":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="如果有需要隨時可以重做唷"))
     else:
-        message = {'type': 'sticker',
-                     'packageId': "2",
-                     'stickerId': "149"}
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, messages=json.loads(stickermessagejson))
 
 # 存照片
 from linebot.models import (
