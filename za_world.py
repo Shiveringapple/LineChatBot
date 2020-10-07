@@ -61,10 +61,6 @@ def handle_follow_event(event):
         myfile.write(json.dumps(vars(user_profile), sort_keys=True))
         myfile.write('\r\n')
 
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage("哈哈哈，老師打程式碼好痛苦喔。")
-    )
     # 歡迎詞
     line_bot_api.reply_message(
         event.reply_token,
@@ -377,7 +373,10 @@ x = OrderedDict()
 
 # 每個人的狀態記下來用{ID:Q(n)}
 # 不管輸入什麼都回應text的內容
-@handler.add(MessageEvent, message=TextMessage)
+@handler.add(MessageEvent, message=[{'type': 'sticker',
+    'packageId': "2",
+    'stickerId': "149"
+}])
 def handle_message(event):
     user_profile = line_bot_api.get_profile(event.source.user_id)
     global sum
